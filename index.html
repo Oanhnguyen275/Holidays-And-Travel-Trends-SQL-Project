@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holiday Travel Visualization</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <h1>Holiday Travel Data: Domestic vs International</h1>
+    
+    <canvas id="holidayTypeChart" width="400" height="200"></canvas>
+    <canvas id="travelTrendChart" width="400" height="200"></canvas>
+
+    <script>
+        // Fetch and Parse CSV on Page Load
+        window.onload = function() {
+            const csvFilePath = 'modified_merged.csv';  // Adjust this to your file path
+            fetch(csvFilePath)
+                .then(response => response.text())
+                .then(csvData => {
+                    Papa.parse(csvData, {
+                        header: true,
+                        complete: function(results) {
+                            const data = results.data;
+                            processHolidayData(data);  // Process and visualize the data
+                        },
+                        skipEmptyLines: true
+                    });
+                })
+                .catch(error => console.error("Error fetching CSV:", error));
+        };
+
+        // Process Data for Domestic vs International Comparison
+        function processHolidayData(data) {
+            // Group data by holiday type (Public holidays vs Observances)
+            const groupedData = groupByHolidayType(data);
+
+            // Prepare Data for Stacked Bar Chart: Domestic vs International by Holiday Type
+            const holidayTypes = Object.keys(groupedData);
+            const domesticTravel = holidayTypes.map(type => getDomesticTravel(groupedData[type]));
+            const internationalTravel = holidayTypes.map(type => getInternationalTravel(groupedData[type]));
+            
+            createHolidayTypeChart(holidayTypes, domesticTravel, internationalTravel);
+
+            // Prepare Data for Travel Trend Over Time (Monthly)
+            const monthlyData = groupByMonth(data);
+            const months = Object.keys(monthlyData);
+            const domesticTrend = months.map(month => getMonthlyDomesticTravel(monthlyData[month]));
+            const internationalTrend = months.map(month => getMonthlyInternationalTravel(monthlyData[month]));
+            
+            createTravelTrendChart(months, domesticTrend, internationalTrend);
+        }
+
+        // Group data by Holiday Type
+        function groupByHolidayType(data) {
+            return data.reduce((acc, curr) => {
+                const type = curr.Type;
+                if (!acc[type]) acc[type] = [];
+                acc[type].push(curr);
+                return acc;
+            }, {});
+        }
+
+        // Get total domestic travel for a given holiday type
+        function getDomesticTravel(holidayData) {
+            return holidayData.reduce((total, holiday) => total + parseFloat(holiday.Domestic), 0);
+        }
+
+        // Get total international travel for a given holiday type
+        function getInternationalTravel(holidayData) {
+            return holidayData.reduce((total, holiday) => total + parseFloat(holiday.International), 0);
+        }
+
+        // Group data by Month for Trend Analysis
+        function groupByMonth(data) {
+            return data.reduce((acc, curr) => {
+                const month = curr.Month;
+                if (!acc[month]) acc[month] = [];
+                acc[month].push(curr);
+                return acc;
+            }, {});
+        }
+
+        // Get monthly domestic travel total
+        function getMonthlyDomesticTravel(monthData) {
+            return monthData.reduce((total, holiday) => total + parseFloat(holiday.Domestic), 0);
+        }
+
+        // Get monthly international travel total
+        function getMonthlyInternationalTravel(monthData) {
+            return monthData.reduce((total, holiday) => total + parseFloat(holiday.International), 0);
+        }
+
+        // Create Stacked Bar Chart for Holiday Type Comparison
+        function createHolidayTypeChart(labels, domesticData, internationalData) {
+            const ctx = document.getElementById('holidayTypeChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Domestic Travelers',
+                            data: domesticData,
+                            backgroundColor: '#36A2EB',
+                        },
+                        {
+                            label: 'International Travelers',
+                            data: internationalData,
+                            backgroundColor: '#FF6384',
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        // Create Line Chart for Travel Trend Over Time (Monthly)
+        function createTravelTrendChart(labels, domesticTrend, internationalTrend) {
+            const ctx = document.getElementById('travelTrendChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Domestic Travelers',
+                            data: domesticTrend,
+                            borderColor: '#36A2EB',
+                            fill: false
+                        },
+                        {
+                            label: 'International Travelers',
+                            data: internationalTrend,
+                            borderColor: '#FF6384',
+                            fill: false
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
