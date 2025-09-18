@@ -58,6 +58,4 @@ This project prioritizes ethical standards in data handling and analysis. It use
 
 https://www.kaggle.com/datasets/umerhaddii/global-holidays-and-travel-data?select=global_holidays.csv
 
-### Contributors
 
-Anna Whitaker, Oanh Nguyen, Rania Al-Samarai, Axel Keller
