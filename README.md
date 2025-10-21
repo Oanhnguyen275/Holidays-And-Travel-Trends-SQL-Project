@@ -7,27 +7,27 @@ This project analyzes global holiday data and travel trends to uncover patterns 
 
 ## Interact with this dataset
 
-📂 Project Structure
 Holidays-And-Travel-Trends-SQL-Project/
-
-data/
-├─ global_holidays.csv
-├─ monthly_passengers.csv
-├─ modified_holidays_travel.csv
-└─ modified_merged.csv
-
-sql/
-└─ global_holidays_schema.sql
-
-notebooks/
-└─ global_holiday_clean.ipynb
-
-web/
-├─ index.html
-└─ style.css
-
+│
+├─ data/
+│   ├─ global_holidays.csv
+│   ├─ monthly_passengers.csv
+│   ├─ modified_holidays_travel.csv
+│   └─ modified_merged.csv
+│
+├─ sql/
+│   └─ global_holidays_schema.sql
+│
+├─ notebooks/
+│   └─ global_holiday_clean.ipynb
+│
+├─ web/
+│   ├─ index.html
+│   └─ style.css
+│
 ├─ ERD.png
 └─ README.md
+
 
 ## SQL Documentation 
 
