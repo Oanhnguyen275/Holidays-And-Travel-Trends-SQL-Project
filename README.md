@@ -3,20 +3,31 @@ ETL Pipeline Development for Global Holidays and Travel Data
 
 ## Overview 
 
-This project analyzes global holidays and travel data to explore the relationship between holidays and travel trends. Using two datasets sourced from Kaggle, I built an ETL pipeline to process and load the data into a SQL database for efficient analysis. The project provides insights into how holidays influence global travel behavior, with applications in tourism and travel planning.
+This project analyzes global holiday data and travel trends to uncover patterns in passenger behavior during holiday periods. Using SQL and data preprocessing in Python, the project provides insights into seasonal travel patterns, the impact of holidays on air travel, and overall travel trends.
 
 ## Interact with this dataset
 
-This project includes these key datasets:
-
-  1. global_holidays.csv: The raw dataset containing global holiday information.
-  2. monthly_passengers.csv: The raw dataset containing monthly passenger counts.
-
-The following cleaned datasets were generated:
-
-1. modified_holidays_travel.csv: A cleaned and processed dataset combining global holidays and travel data.
-2. modified_monthly_passengers.csv: A cleaned version of the monthly passenger data.
-3. modified_merged.csv: A merged dataset prepared for analysis.
+📂 Project Structure
+Holidays-And-Travel-Trends-SQL-Project/
+│
+├─ data/
+│   ├─ global_holidays.csv
+│   ├─ monthly_passengers.csv
+│   ├─ modified_holidays_travel.csv
+│   └─ modified_merged.csv
+│
+├─ sql/
+│   └─ global_holidays_schema.sql
+│
+├─ notebooks/
+│   └─ global_holiday_clean.ipynb
+│
+├─ web/
+│   ├─ index.html
+│   └─ style.css
+│
+├─ ERD.png
+└─ README.md
 
 ## SQL Documentation 
 
