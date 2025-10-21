@@ -64,7 +64,8 @@ Below is the ERD that illustrates the relationships between the tables:
 
 Visualizations help uncover trends and patterns in hiliday travel data: Domestic ans International
 <img width="505" height="277" alt="Screenshot 2568-10-20 at 12 53 52 PM" src="https://github.com/user-attachments/assets/98ef2761-8ffa-41eb-af56-59ff2ed9e919" />
-<img width="505" height="277" alt="Screenshot 2568-10-20 at 12 53 52 PM" src="https://github.com/user-attachments/assets/8b03a7df-9534-4545-89d7-de0707fa8859" />
+<img width="525" height="265" alt="Screenshot 2568-10-20 at 12 54 16 PM" src="https://github.com/user-attachments/assets/8fbac7ab-1571-45e7-ae11-51a79b49b53f" />
+
 
 Holiday Impact on Travel, top 10 Holidays by Passenger Count
 <img width="990" height="588" alt="Screenshot 2568-10-21 at 5 20 01 PM" src="https://github.com/user-attachments/assets/143ad150-afaf-42ad-9bb2-4404af78fac8" />
