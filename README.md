@@ -47,9 +47,8 @@ Below is the ERD that illustrates the relationships between the tables:
   - holidays_travel links to country_code via the country_code foreign key.
 
   - monthly_passengers links to country_code via the country_code foreign key.
- 
-<img width="575" alt="image" src="https://github.com/user-attachments/assets/ff7c54bd-4ece-4b88-bd6c-3da9ac7cb625" />
-## Visualizations in HTML
+
+## Visualizations
 
 Visualizations help uncover trends and patterns in hiliday travel data: Domestic ans International
 <img width="505" height="277" alt="Screenshot 2568-10-20 at 12 53 52 PM" src="https://github.com/user-attachments/assets/98ef2761-8ffa-41eb-af56-59ff2ed9e919" />
