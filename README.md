@@ -49,15 +49,18 @@ Below is the ERD that illustrates the relationships between the tables:
   - monthly_passengers links to country_code via the country_code foreign key.
  
 <img width="575" alt="image" src="https://github.com/user-attachments/assets/ff7c54bd-4ece-4b88-bd6c-3da9ac7cb625" />
-## Visualizations
+## Visualizations in HTML
 
-Visualizations help uncover trends and patterns in travel data. Examples include:
+Visualizations help uncover trends and patterns in hiliday travel data: Domestic ans International
+<img width="505" height="277" alt="Screenshot 2568-10-20 at 12 53 52 PM" src="https://github.com/user-attachments/assets/98ef2761-8ffa-41eb-af56-59ff2ed9e919" />
+<img width="505" height="277" alt="Screenshot 2568-10-20 at 12 53 52 PM" src="https://github.com/user-attachments/assets/8b03a7df-9534-4545-89d7-de0707fa8859" />
 
-Monthly Passenger Trends – Line chart showing monthly passengers over time.
+Holiday Impact on Travel, top 10 Holidays by Passenger Count
+<img width="990" height="588" alt="Screenshot 2568-10-21 at 5 20 01 PM" src="https://github.com/user-attachments/assets/143ad150-afaf-42ad-9bb2-4404af78fac8" />
 
-Holiday Impact on Travel – Bar charts comparing passenger counts during holiday vs non-holiday periods.
+Top Countries by Travel Volume 
+<img width="989" height="591" alt="Screenshot 2568-10-21 at 5 26 15 PM" src="https://github.com/user-attachments/assets/46aac98c-4c16-45a1-b4e7-fad1a1eeca9c" />
 
-Top Countries by Travel Volume – Pie chart or bar chart highlighting countries with highest travel volume.
 ## Key Insights
 
 Travel volumes spike during major holidays.
