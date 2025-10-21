@@ -49,9 +49,24 @@ Below is the ERD that illustrates the relationships between the tables:
   - monthly_passengers links to country_code via the country_code foreign key.
  
 <img width="575" alt="image" src="https://github.com/user-attachments/assets/ff7c54bd-4ece-4b88-bd6c-3da9ac7cb625" />
+## Visualizations
+
+Visualizations help uncover trends and patterns in travel data. Examples include:
+
+Monthly Passenger Trends – Line chart showing monthly passengers over time.
+
+Holiday Impact on Travel – Bar charts comparing passenger counts during holiday vs non-holiday periods.
+
+Top Countries by Travel Volume – Pie chart or bar chart highlighting countries with highest travel volume.
+## Key Insights
+
+Travel volumes spike during major holidays.
+
+Certain countries have consistent seasonal patterns in passenger traffic.
+
+Holidays significantly impact airline passenger counts and can guide business planning.
 
 ## Ethical Considerations
-
 
 This project prioritizes ethical standards in data handling and analysis. It uses only publicly available datasets that do not include any personally identifiable information. Potential regional biases are addressed, acknowledging underrepresentation in some areas. The insights are applied ethically, focusing on enhancing travel services and improving tourism strategies.
 
